@@ -6,3 +6,19 @@ body {
 h1 {
     color: brown;
 }
+
+.hidden {
+    display: none;
+}
+
+#game-container {
+    text-align: center;
+    width: 500px;
+    padding: 15px;
+}
+
+#flag-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
