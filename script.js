@@ -14,7 +14,9 @@ const questions = {
     ]
 };
 
-let currentQuestionIndex = 0; // start at the first question
+let currentQuestion = 0; // start at the first question
+let currentLevel = 1;
+let attemptsLeft = 2;
 
 // start button event listener
 start.addEventListener('click', () => {
@@ -24,13 +26,25 @@ start.addEventListener('click', () => {
 });
 
 function loadQuestion() {
-    let question = level1Questions[currentQuestionIndex]; // get the current question
+    let currentLevelQuestions = questions.level1; // access level 1 questions
 
-    flagImage.src = question.flag; // set flag image
+    if (currentQuestion >= questions.length) {
+        if (currentLevel === 1) {
+            alert("Congrats! Level 1 is completed!");
+            currentLevel = 2;
+            currentQuestion = 0;
+        } else {
+            alert("You won!");
+        }
+        return;
+    }
 
-    // update the answer buttons
-    optionButtons.forEach((btn, index) => {
-        btn.textContent = question.options[index]; // set button text
-        btn.onclick = () => checkAnswer(question.options[index], question.answer); // check the answer
+    let question = currentLevelQuestions[currentQuestion];
+
+    flagImage.src = question.flag; // update flag image
+
+    // update answer buttons
+    answerButtons.forEach((button, index) => {
+        button.textContent = question.options[index];
     });
 }
