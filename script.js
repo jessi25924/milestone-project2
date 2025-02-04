@@ -46,6 +46,7 @@ function loadQuestion() {
             loadQuestion(); // load level 2 immediately
         } else {
             alert("You won!");
+            resetGame(); // reset game after completing level 2
         }
         return;
     }
@@ -74,6 +75,12 @@ function checkAnswer(selected, correct) {
 
         if (attemptsLeft <= 0) {
             alert("Game over! Try again!");
+            resetGame(); // restart when all attempts are used
         }
     }
+}
+
+function resetGame() {
+    landingPage.classList.remove("hidden");
+    gameContainer.classList.add("hidden");
 }
