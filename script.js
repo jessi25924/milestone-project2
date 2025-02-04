@@ -48,3 +48,18 @@ function loadQuestion() {
         button.textContent = question.options[index];
     });
 }
+
+function checkAnswer(selected, correct) {
+    if (selected === correct) {
+        feeback.textContent = "Correct!";
+        currentQuestion++; // next question
+        setTimeout(loadQuestion, 1000);
+    } else {
+        attemptsLeft--; // resuce attempts
+        feedback.textContent = "Wrong! try again! ${attemptsLeft}"
+
+        if (attemptsLeft <= 0) {
+            alert(Game over! Try again!);
+        }
+    }
+}
