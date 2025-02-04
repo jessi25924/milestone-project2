@@ -28,11 +28,20 @@ let currentLevel = 1;
 let attemptsLeft = 2;
 
 // start button event listener
-start.addEventListener('click', () => {
+start.addEventListener("click", startGame);
+
+function startGame() {
     landingPage.classList.add("hidden"); // hide landing page
     gameContainer.classList.remove("hidden") // show game container
+
+    // reset everything for a new game
+    currentQuestion = 0;
+    currentLevel = 1;
+    attemptsLeft = 2;
+
     loadQuestion();
-});
+}
+    
 
 function loadQuestion() {
     let currentLevelQuestions = currentLevel === 1 ? questions.level1:questions.level2; // access questions
@@ -45,7 +54,7 @@ function loadQuestion() {
             attemptsLeft = 2; // reset attempts for level 2
             loadQuestion(); // load level 2 immediately
         } else {
-            alert("You won!");
+            alert("Congratulations! You finished the game!");
             resetGame(); // reset game after completing level 2
         }
         return;
