@@ -3,6 +3,7 @@ const gameContainer = document.getElementById("game-container");
 const start = document.getElementById("start-button");
 const flagImage = document.getElementById("flag-image");
 const answerButtons = document.querySelectorAll(".answer-button");
+const feedback = document.getElementById("feedback");
 
 const questions = {
     level1: [
@@ -10,7 +11,7 @@ const questions = {
         { flag: "assets/img/UK.png", options: ["United Kingdom", "New Zealand", "Australia"], answer: "United Kingdom" },
         { flag: "assets/img/Philippines.png", options: ["Czech Republic", "sint Maarten", "Philippines"], answer: "Philippines" },
         { flag: "assets/img/USA.webp", options: ["Malaysia", "United State of America", "England"], answer: "United State of America" },
-        { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Malta" },
+        { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Switzerland" },
     ]
 };
 
@@ -28,7 +29,7 @@ start.addEventListener('click', () => {
 function loadQuestion() {
     let currentLevelQuestions = questions.level1; // access level 1 questions
 
-    if (currentQuestion >= questions.length) {
+    if (currentQuestion >= currentLevelQuestions.length) {
         if (currentLevel === 1) {
             alert("Congrats! Level 1 is completed!");
             currentLevel = 2;
@@ -46,20 +47,23 @@ function loadQuestion() {
     // update answer buttons
     answerButtons.forEach((button, index) => {
         button.textContent = question.options[index];
+        button.onclick = () => checkAnswer(button.textContent, question.answer); // event listeners for each answer button
     });
+
+    feedback.textContent = ""; // clear previous feedback
 }
 
 function checkAnswer(selected, correct) {
     if (selected === correct) {
-        feeback.textContent = "Correct!";
+        feedback.textContent = "Correct!";
         currentQuestion++; // next question
         setTimeout(loadQuestion, 1000);
     } else {
-        attemptsLeft--; // resuce attempts
-        feedback.textContent = "Wrong! try again! ${attemptsLeft}"
+        attemptsLeft--; // reduce attempts
+        feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
 
         if (attemptsLeft <= 0) {
-            alert(Game over! Try again!);
+            alert("Game over! Try again!");
         }
     }
 }
