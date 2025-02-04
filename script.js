@@ -12,7 +12,8 @@ const questions = {
         { flag: "assets/img/Philippines.png", options: ["Czech Republic", "sint Maarten", "Philippines"], answer: "Philippines" },
         { flag: "assets/img/USA.webp", options: ["Malaysia", "United State of America", "England"], answer: "United State of America" },
         { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Switzerland" }
-    ]
+    ],
+
     level2: [
         { flag: "assets/img/Egypt.png", options: ["Scotland", "Egypt", "Wales"], answer: "Egypt" },
         { flag: "assets/img/Greece.png", options: ["Scotland", "N. Ireland", "Greece"], answer: "Greece" },
@@ -34,13 +35,15 @@ start.addEventListener('click', () => {
 });
 
 function loadQuestion() {
-    let currentLevelQuestions = questions.level1; // access level 1 questions
+    let currentLevelQuestions = currentLevel === 1 ? questions.level1:questions.level2; // access questions
 
     if (currentQuestion >= currentLevelQuestions.length) {
         if (currentLevel === 1) {
             alert("Congrats! Level 1 is completed!");
             currentLevel = 2;
             currentQuestion = 0;
+            attemptsLeft = 2; // reset attempts for level 2
+            loadQuestion(); // load level 2 immediately
         } else {
             alert("You won!");
         }
