@@ -13,6 +13,9 @@ const questions = {
         { flag: "assets/img/USA.webp", options: ["Malaysia", "United State of America", "England"], answer: "United State of America" },
         { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Switzerland" },
     ]
+    level2: [
+        
+    ]
 };
 
 let currentQuestion = 0; // start at the first question
