@@ -11,10 +11,14 @@ const questions = {
         { flag: "assets/img/UK.png", options: ["United Kingdom", "New Zealand", "Australia"], answer: "United Kingdom" },
         { flag: "assets/img/Philippines.png", options: ["Czech Republic", "sint Maarten", "Philippines"], answer: "Philippines" },
         { flag: "assets/img/USA.webp", options: ["Malaysia", "United State of America", "England"], answer: "United State of America" },
-        { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Switzerland" },
+        { flag: "assets/img/Switzerland.png", options: ["Switzerland", "Singapore", "Malta"], answer: "Switzerland" }
     ]
     level2: [
-        
+        { flag: "assets/img/Egypt.png", options: ["Scotland", "Egypt", "Wales"], answer: "Egypt" },
+        { flag: "assets/img/Greece.png", options: ["Scotland", "N. Ireland", "Greece"], answer: "Greece" },
+        { flag: "assets/img/Italy.png", options: ["Italy", "N. Ireland", "Wales"], answer: "Italy" },
+        { flag: "assets/img/Japan.png", options: ["Scotland", "Japan", "Wales"], answer: "Japan" },
+        { flag: "assets/img/Vietnam.png", options: ["Vietnam", "N. Ireland", "Wales"], answer: "Vietnam" }
     ]
 };
 
