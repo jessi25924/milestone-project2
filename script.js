@@ -70,9 +70,13 @@ let attemptsLeft = 2;
 // start button event listener
 start.addEventListener("click", startGame);
 
+/**
+ * Starts the game by hiding the landing page and showing the game container
+ * Reset game variables and loads the first question.
+ */
 function startGame() {
-  landingPage.classList.add("hidden"); // hide landing page
-  gameContainer.classList.remove("hidden"); // show game container
+  landingPage.classList.add("hidden");
+  gameContainer.classList.remove("hidden");
 
   // reset everything for a new game
   currentQuestion = 0;
@@ -82,6 +86,11 @@ function startGame() {
   loadQuestion();
 }
 
+/**
+ * Loads the current question's flag and answer choices.
+ * Hides answer buttons until the flag is fully loaded.
+ * If questions in current level are completed, it transitions to the next level or end the game.
+ */
 function loadQuestion() {
   let currentLevelQuestions =
     currentLevel === 1 ? questions.level1 : questions.level2; // access questions
@@ -91,7 +100,7 @@ function loadQuestion() {
       alert("Congrats! Level 1 is completed!");
       currentLevel = 2;
       currentQuestion = 0;
-      attemptsLeft = 2; // reset attempts for level 2
+      attemptsLeft = 2;
       loadQuestion(); // load level 2 immediately
     } else {
       alert("Congratulations! You finished the game!");
@@ -100,29 +109,38 @@ function loadQuestion() {
     return;
   }
 
-  let question = currentLevelQuestions[currentQuestion]; // retrieves the current question based on the current level
+  let question = currentLevelQuestions[currentQuestion]; // Retrieves the current question based on the current level
 
-  // hide answer buttons while the flag loads
+  // Hide answer buttons while the flag loads
   answerButtons.forEach((button) => (button.style.visibility = "hidden"));
 
-  flagImage.src = question.flag; // update flag image
+  flagImage.src = question.flag; // Update flag image
 
-  // when the flag is loaded, show the buttons again
+  // When the flag is loaded, show the buttons again
   flagImage.onload = () => {
     answerButtons.forEach((button) => (button.style.visibility = "visible"));
   };
 
-  // update answer buttons
+  // Update answer buttons
   answerButtons.forEach((button, index) => {
     button.textContent = question.options[index];
     button.onclick = () => checkAnswer(button.textContent, question.answer); // event listeners for each answer button
   });
 
-  feedback.textContent = ""; // clear previous feedback
+  feedback.textContent = ""; // Clear previous feedback
 }
 
+/**
+ * Check if the selected answer is correct.
+ * - If correct: moves to the next question after a short delay.
+ * - If incorrect: decreases attempts and shos feedback.
+ * - If no attempts remain: end the game.
+ *
+ * @param {string} selected - the answer chosen by the player.
+ * @param {string} correct - the correct answer for the current question.
+ */
 function checkAnswer(selected, correct) {
-  // hide answer buttons when an answer is selected
+  // Hide answer buttons when an answer is selected
   answerButtons.forEach((button) => (button.style.visibility = "hidden"));
 
   if (selected === correct) {
@@ -137,12 +155,16 @@ function checkAnswer(selected, correct) {
       alert("Game over! Try again!");
       resetGame(); // restart when all attempts are used
     } else {
-      // show buttons again so the user can try another answer
+      // Show buttons again so the user can try another answer
       answerButtons.forEach((button) => (button.style.visibility = "visible"));
     }
   }
 }
 
+/**
+ * Resets the game to the initial state by showing the landing page
+ * and hiding the game container.
+ */
 function resetGame() {
   landingPage.classList.remove("hidden");
   gameContainer.classList.add("hidden");
