@@ -100,7 +100,6 @@ function loadQuestion() {
       alert("Congrats! Level 1 is completed!");
       currentLevel = 2;
       currentQuestion = 0;
-      attemptsLeft = 2;
       loadQuestion(); // load level 2 immediately
     } else {
       alert("Congratulations! You finished the game!");
@@ -110,6 +109,9 @@ function loadQuestion() {
   }
 
   let question = currentLevelQuestions[currentQuestion]; // Retrieves the current question based on the current level
+
+  // Reset attempts for each new question
+  attemptsLeft = 2;
 
   // Hide answer buttons while the flag loads
   answerButtons.forEach((button) => (button.style.visibility = "hidden"));
