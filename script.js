@@ -82,6 +82,7 @@ function startGame() {
   currentQuestion = 0;
   currentLevel = 1;
   attemptsLeft = 2;
+  score = 0;
 
   loadQuestion();
 }
@@ -102,7 +103,9 @@ function loadQuestion() {
       currentQuestion = 0;
       loadQuestion(); // load level 2 immediately
     } else {
-      alert("Congratulations! You finished the game!");
+      alert(
+        `Congratulations! You finished the game! Your final score is ${score}`
+      );
       resetGame(); // reset game after completing level 2
     }
     return;
@@ -147,6 +150,7 @@ function checkAnswer(selected, correct) {
 
   if (selected === correct) {
     feedback.textContent = "Correct!";
+    score += 10; // Increases score
     currentQuestion++; // next question
     setTimeout(loadQuestion, 1000);
   } else {
@@ -154,7 +158,7 @@ function checkAnswer(selected, correct) {
     feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
 
     if (attemptsLeft <= 0) {
-      alert("Game over! Try again!");
+      alert(`Game over! Your final score is ${score}`);
       resetGame(); // restart when all attempts are used
     } else {
       // Show buttons again so the user can try another answer
