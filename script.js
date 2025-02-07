@@ -4,6 +4,10 @@ const start = document.getElementById("start-button");
 const flagImage = document.getElementById("flag-image");
 const answerButtons = document.querySelectorAll(".answer-button");
 const feedback = document.getElementById("feedback");
+const scoreModal = document.getElementById("score-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalMessage = document.getElementById("modal-message");
+const modalClose = document.getElementById("modal-close");
 
 const questions = {
   level1: [
@@ -63,6 +67,12 @@ const questions = {
   ],
 };
 
+// Modal
+modalClose.addEventListener("click", () => {
+  scoreModal.classList.add("hidden");
+  resetGame();
+});
+
 let currentQuestion = 0; // start at the first question
 let currentLevel = 1;
 let attemptsLeft = 2;
@@ -98,15 +108,14 @@ function loadQuestion() {
 
   if (currentQuestion >= currentLevelQuestions.length) {
     if (currentLevel === 1) {
-      alert("Congrats! Level 1 is completed!");
+      showModal("Congrats! Level 1 is completed!");
       currentLevel = 2;
       currentQuestion = 0;
-      loadQuestion(); // load level 2 immediately
+      setTimeout(loadQuestion, 2000);
     } else {
-      alert(
+      showModal(
         `Congratulations! You finished the game! Your final score is ${score}`
       );
-      resetGame(); // reset game after completing level 2
     }
     return;
   }
@@ -158,13 +167,21 @@ function checkAnswer(selected, correct) {
     feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
 
     if (attemptsLeft <= 0) {
-      alert(`Game over! Your final score is ${score}`);
-      resetGame(); // restart when all attempts are used
+      showModal(`Game over! Your final score is ${score}`);
     } else {
       // Show buttons again so the user can try another answer
       answerButtons.forEach((button) => (button.style.visibility = "visible"));
     }
   }
+}
+
+/**
+ * This modal provide informational content such as score, message or notification.
+ */
+function showModal(title, message) {
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  scoreModal.classList.remove("hidden");
 }
 
 /**
