@@ -77,6 +77,7 @@ let currentQuestion = 0; // start at the first question
 let currentLevel = 1;
 let attemptsLeft = 2;
 let score = 0;
+let timer;
 
 // start button event listener
 start.addEventListener("click", startGame);
@@ -143,6 +144,21 @@ function loadQuestion() {
   });
 
   feedback.textContent = ""; // Clear previous feedback
+
+  // Start the timer for level 2
+  if (currentLevel === 2) {
+    let timeLeft = 60;
+    if (timer) clearInterval(timer); // Reset previuos timer
+    timer = setInterval(() => {
+      timeLeft--;
+      feedback.textContent = `Time left: ${timeLeft}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        showModal("Time's up!", `Your final score is ${score}`);
+      }
+    }, 1000);
+  }
 }
 
 /**
