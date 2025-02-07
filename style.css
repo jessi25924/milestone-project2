@@ -38,6 +38,11 @@ h1 {
 
 .modal {
     position: fixed;
+    top: 35%;
+    left: 18%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 

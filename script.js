@@ -76,6 +76,7 @@ modalClose.addEventListener("click", () => {
 let currentQuestion = 0; // start at the first question
 let currentLevel = 1;
 let attemptsLeft = 2;
+let score = 0;
 
 // start button event listener
 start.addEventListener("click", startGame);
@@ -159,7 +160,7 @@ function checkAnswer(selected, correct) {
 
   if (selected === correct) {
     feedback.textContent = "Correct!";
-    score += 10; // Increases score
+    score += 1; // Increases score
     currentQuestion++; // next question
     setTimeout(loadQuestion, 1000);
   } else {
