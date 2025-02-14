@@ -12,27 +12,27 @@ const modalClose = document.getElementById("modal-close");
 const questions = {
   level1: [
     {
-      flag: "assets/img/Wales.png",
+      flag: "assets/img/wales.png",
       options: ["Scotland", "N. Ireland", "Wales"],
       answer: "Wales",
     },
     {
-      flag: "assets/img/UK.png",
+      flag: "assets/img/uk.png",
       options: ["United Kingdom", "New Zealand", "Australia"],
       answer: "United Kingdom",
     },
     {
-      flag: "assets/img/Philippines.png",
+      flag: "assets/img/philippines.png",
       options: ["Czech Republic", "sint Maarten", "Philippines"],
       answer: "Philippines",
     },
     {
-      flag: "assets/img/USA.webp",
+      flag: "assets/img/usa.webp",
       options: ["Malaysia", "United States of America", "England"],
       answer: "United States of America",
     },
     {
-      flag: "assets/img/Switzerland.png",
+      flag: "assets/img/switzerland.png",
       options: ["Switzerland", "Singapore", "Malta"],
       answer: "Switzerland",
     },
@@ -40,27 +40,27 @@ const questions = {
 
   level2: [
     {
-      flag: "assets/img/Egypt.png",
+      flag: "assets/img/egypt.png",
       options: ["Scotland", "Egypt", "Wales"],
       answer: "Egypt",
     },
     {
-      flag: "assets/img/Greece.png",
+      flag: "assets/img/greece.png",
       options: ["Scotland", "N. Ireland", "Greece"],
       answer: "Greece",
     },
     {
-      flag: "assets/img/Italy.png",
+      flag: "assets/img/italy.png",
       options: ["Italy", "N. Ireland", "Wales"],
       answer: "Italy",
     },
     {
-      flag: "assets/img/Japan.png",
+      flag: "assets/img/japan.png",
       options: ["Scotland", "Japan", "Wales"],
       answer: "Japan",
     },
     {
-      flag: "assets/img/Vietnam.png",
+      flag: "assets/img/vietnam.png",
       options: ["Vietnam", "N. Ireland", "Wales"],
       answer: "Vietnam",
     },
