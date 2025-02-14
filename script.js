@@ -96,6 +96,7 @@ function startGame() {
   attemptsLeft = 2;
   score = 0;
 
+  clearTimer(); // Ensure timer is cleared
   loadQuestion();
 }
 
@@ -105,6 +106,7 @@ function startGame() {
  * If questions in current level are completed, it transitions to the next level or end the game.
  */
 function loadQuestion() {
+  clearTimer();
   let currentLevelQuestions =
     currentLevel === 1 ? questions.level1 : questions.level2; // access questions
 
@@ -157,7 +159,7 @@ function loadQuestion() {
       feedback.textContent = `Time left: ${timeLeft}`;
 
       if (timeLeft <= 0) {
-        clearInterval(timer);
+        clearTimer();
         showModal("Time's up!", `Your final score is ${score}`, false, true);
       }
     }, 1000);
@@ -238,4 +240,12 @@ function showModal(
 function resetGame() {
   landingPage.classList.remove("hidden");
   gameContainer.classList.add("hidden");
+  clearTimer();
+}
+
+function clearTimer() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  }
 }
