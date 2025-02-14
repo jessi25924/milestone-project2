@@ -67,12 +67,6 @@ const questions = {
   ],
 };
 
-// Modal
-modalClose.addEventListener("click", () => {
-  scoreModal.classList.add("hidden");
-  resetGame();
-});
-
 let currentQuestion = 0; // start at the first question
 let currentLevel = 1;
 let attemptsLeft = 2;
@@ -81,6 +75,12 @@ let timer;
 
 // start button event listener
 start.addEventListener("click", startGame);
+
+// Modal
+modalClose.addEventListener("click", () => {
+  scoreModal.classList.add("hidden");
+  resetGame();
+});
 
 /**
  * Starts the game by hiding the landing page and showing the game container
@@ -110,13 +110,17 @@ function loadQuestion() {
 
   if (currentQuestion >= currentLevelQuestions.length) {
     if (currentLevel === 1) {
-      showModal("Congrats! Level 1 is completed!");
-      currentLevel = 2;
-      currentQuestion = 0;
-      setTimeout(loadQuestion, 2000);
+      showModal(
+        "Congrats! Level 1 is completed!",
+        "Click below to proceed to Level 2",
+        true
+      );
     } else {
       showModal(
-        `Congratulations! You finished the game! Your final score is ${score}`
+        `Congratulations! You finished the game! Your final score is ${score}`,
+        "",
+        false,
+        true
       );
     }
     return;
@@ -148,14 +152,13 @@ function loadQuestion() {
   // Start the timer for level 2
   if (currentLevel === 2) {
     let timeLeft = 60;
-    if (timer) clearInterval(timer); // Reset previuos timer
     timer = setInterval(() => {
       timeLeft--;
       feedback.textContent = `Time left: ${timeLeft}`;
 
       if (timeLeft <= 0) {
         clearInterval(timer);
-        showModal("Time's up!", `Your final score is ${score}`);
+        showModal("Time's up!", `Your final score is ${score}`, false, true);
       }
     }, 1000);
   }
@@ -166,9 +169,6 @@ function loadQuestion() {
  * - If correct: moves to the next question after a short delay.
  * - If incorrect: decreases attempts and shos feedback.
  * - If no attempts remain: end the game.
- *
- * @param {string} selected - the answer chosen by the player.
- * @param {string} correct - the correct answer for the current question.
  */
 function checkAnswer(selected, correct) {
   // Hide answer buttons when an answer is selected
@@ -184,7 +184,7 @@ function checkAnswer(selected, correct) {
     feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
 
     if (attemptsLeft <= 0) {
-      showModal(`Game over! Your final score is ${score}`);
+      showModal(`Game over! Your final score is ${score}`, "", false, true);
     } else {
       // Show buttons again so the user can try another answer
       answerButtons.forEach((button) => (button.style.visibility = "visible"));
@@ -195,10 +195,40 @@ function checkAnswer(selected, correct) {
 /**
  * This modal provide informational content such as score, message or notification.
  */
-function showModal(title, message) {
+function showModal(
+  title,
+  message,
+  isLevelComplete = false,
+  isGameOver = false
+) {
   modalTitle.textContent = title;
   modalMessage.textContent = message;
   scoreModal.classList.remove("hidden");
+
+  // Remove any old buttons inside the modal
+  let oldButton = document.querySelector(".modal-content button");
+  if (oldButton) oldButton.remove();
+
+  let button = document.createElement("button");
+  button.id = "modal-close";
+
+  if (isLevelComplete) {
+    button.textContent = "Level 2";
+    button.addEventListener("click", () => {
+      scoreModal.classList.add("hidden");
+      currentLevel = 2;
+      currentQuestion = 0;
+      loadQuestion();
+    });
+  } else if (isGameOver) {
+    button.textContent = "Start Again";
+    button.addEventListener("click", () => {
+      scoreModal.classList.add("hidden");
+      resetGame();
+    });
+  }
+
+  document.querySelector(".modal-content").appendChild(button);
 }
 
 /**
