@@ -12,12 +12,12 @@ const modalClose = document.getElementById("modal-close");
 const questions = {
   level1: [
     {
-      flag: "assets/img/wales.png",
+      flag: "assets/img/wales.jpg",
       options: ["Scotland", "N. Ireland", "Wales"],
       answer: "Wales",
     },
     {
-      flag: "assets/img/uk.png",
+      flag: "assets/img/uk.jpg",
       options: ["United Kingdom", "New Zealand", "Australia"],
       answer: "United Kingdom",
     },
