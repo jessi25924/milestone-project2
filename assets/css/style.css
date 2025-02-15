@@ -35,27 +35,29 @@ h1 {
     width: 90%;
     max-width: 400px; /* Keeps the same size across tablet and desktop */
     padding: 20px;
-    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);/* Credit: Inspired by tutorial video on FB page (Unique Web Contents) */
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.18);/* Credit: Inspired by tutorial video on FB page (Unique Web Contents) */
+    backdrop-filter: blur(30px); /* Credit: Inspired by tutorial video on FB page (Unique Web Contents) */
     margin: 0 auto;
 }
 
 #flag-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
     margin-bottom: 20px;
 }
 
 .modal {
     position: fixed;
-    top: 35%;
-    left: 18%;
-    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Offset to true centre */
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
-    box-shadow: 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
