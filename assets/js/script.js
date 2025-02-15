@@ -22,17 +22,17 @@ const questions = {
       answer: "United Kingdom",
     },
     {
-      flag: "assets/img/philippines.png",
+      flag: "assets/img/philippines.jpg",
       options: ["Czech Republic", "sint Maarten", "Philippines"],
       answer: "Philippines",
     },
     {
-      flag: "assets/img/usa.webp",
+      flag: "assets/img/usa.jpg",
       options: ["Malaysia", "United States of America", "England"],
       answer: "United States of America",
     },
     {
-      flag: "assets/img/switzerland.png",
+      flag: "assets/img/switzerland.jpg",
       options: ["Switzerland", "Singapore", "Malta"],
       answer: "Switzerland",
     },
@@ -40,27 +40,27 @@ const questions = {
 
   level2: [
     {
-      flag: "assets/img/egypt.png",
+      flag: "assets/img/egypt.jpg",
       options: ["Scotland", "Egypt", "Wales"],
       answer: "Egypt",
     },
     {
-      flag: "assets/img/greece.png",
+      flag: "assets/img/greece.jpg",
       options: ["Scotland", "N. Ireland", "Greece"],
       answer: "Greece",
     },
     {
-      flag: "assets/img/italy.png",
+      flag: "assets/img/italy.jpg",
       options: ["Italy", "N. Ireland", "Wales"],
       answer: "Italy",
     },
     {
-      flag: "assets/img/japan.png",
+      flag: "assets/img/japan.jpg",
       options: ["Scotland", "Japan", "Wales"],
       answer: "Japan",
     },
     {
-      flag: "assets/img/vietnam.png",
+      flag: "assets/img/vietnam.jpg",
       options: ["Vietnam", "N. Ireland", "Wales"],
       answer: "Vietnam",
     },
