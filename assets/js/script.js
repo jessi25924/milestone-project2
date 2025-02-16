@@ -112,11 +112,7 @@ function loadQuestion() {
 
   if (currentQuestion >= currentLevelQuestions.length) {
     if (currentLevel === 1) {
-      showModal(
-        "Congrats! Level 1 is completed!",
-        "Click below to proceed to Level 2",
-        true
-      );
+      showModal("Level 1 is completed!", "Click below to proceed", true);
     } else {
       showModal(
         `Congratulations! You finished the game! Your final score is ${score}`,
@@ -178,12 +174,14 @@ function checkAnswer(selected, correct) {
 
   if (selected === correct) {
     feedback.textContent = "Correct!";
+    feedback.style.color = "green";
     score += 1; // Increases score
     currentQuestion++; // next question
     setTimeout(loadQuestion, 1000);
   } else {
     attemptsLeft--; // reduce attempts
     feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
+    feedback.style.color = "red";
 
     if (attemptsLeft <= 0) {
       showModal(`Game over! Your final score is ${score}`, "", false, true);

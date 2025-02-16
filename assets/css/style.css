@@ -40,6 +40,12 @@ h1, #game-intro, #game-instruc {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+#feedback {
+    font-weight: bold;
+    font-size: larger;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
 
 /* Game container */
 #game-container {
