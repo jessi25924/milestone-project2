@@ -110,6 +110,8 @@ function loadQuestion() {
   let currentLevelQuestions =
     currentLevel === 1 ? questions.level1 : questions.level2; // access questions
 
+  document.getElementById("level-text").textContent = `Level ${currentLevel}`; // Update level text
+
   if (currentQuestion >= currentLevelQuestions.length) {
     if (currentLevel === 1) {
       showModal("Level 1 is completed!", "Click below to proceed", true);
