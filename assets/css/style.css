@@ -23,12 +23,12 @@ body {
 
 /* Landing page */
 #landing-page {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    color: brown;
-    padding: 50px;
+    width: 90%;
+    max-width: 500px; /* Keeps the same size across tablet and desktop */
+    padding: 20px;
+    color: #CD7F32;
+    margin: 0 auto;
     /* Credit: The next three lines are inspired by tutorial video on FB page (Unique Web Contents) */
     box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
     border: 2px solid rgba(255, 255, 255, 0.18);
@@ -69,7 +69,7 @@ h1, #game-intro, #game-instruc {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Offset to true centre */
-    background: rgba(255, 255, 255, 0.95);
+    background: #869aa6;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -88,10 +88,18 @@ h1, #game-intro, #game-instruc {
     max-width: 120px;
     padding: 10px 15px;
     font-size: 1rem;
-    background-color: #869AA6;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    background-color: #4d5159;
     border: none;
     border-radius: 8px;
     text-align: center;
+    color: white;
+}
+
+#start-button:hover, #modal-close:hover, .answer-button:hover {
+    color: white;
+    box-shadow: 0 0 10px rgba(192, 192, 192, 0.8);
 }
 
 #answer-container {
