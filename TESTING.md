@@ -23,3 +23,8 @@ To validate the JavaScript file, the recommended validator service by Code Insti
 ## Lighthouse Testing
 
 Lighthouse was used to evaluate the website's performance, accessibility and best practices. This testing ensures the site meets modern web standards and provides an optimised user experience accross devices.
+
+| Device  | Comment                | Screenshot                                                                   |
+| ------- | ---------------------- | ---------------------------------------------------------------------------- |
+| Desktop | minor warning          | ![](assets/img/lighthouse-desktop.png)                                       |
+| Mobile  | some warnings as shown | ![](assets/img/lighthouse-mobile.png) ![](assets/img/lighthouse-mobile2.png) |
