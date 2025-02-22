@@ -183,7 +183,7 @@ function checkAnswer(selected, correct) {
       score += 1; // Increases score
       currentQuestion++; // next question
       loadQuestion();
-    }, 1000); // Delay before loading next question
+    }, 900); // Delay before loading next question
   } else {
     gameContainer.classList.add("wrong-answer"); // turn red
     setTimeout(() => {
@@ -252,6 +252,7 @@ function resetGame() {
   clearTimer();
 }
 
+// Stops any running timer
 function clearTimer() {
   if (timer) {
     clearInterval(timer);
