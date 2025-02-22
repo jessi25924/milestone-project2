@@ -39,3 +39,23 @@ Flagtastic Mission is designed to be fully responsive across various screen seiz
 | Tablet (Chrome DevTools)        | Achieves desired functionality | ![Tablet Device](assets/img/tablet-respons.jpg)           |
 | Laptop 1024px (Chrome DevTools) | Achieves desired functionality | ![Laptop1024px Device](assets/img/laptop1024-respons.jpg) |
 | Laptop 1440px (Chrome DevTools) | Achieves desired functionality | ![Laptop1440px Device](assets/img/laptop1440-respons.jpg) |
+
+## Browser Compatability
+
+Flagtastic Mission has been tested across multiple modern web browsers, including **Google Chrome**, **Mozilla Firefox**, **Microsoft Edge**, and **Opera**. The game functions as intended, with consistent styling and interactive elements.
+
+- **Chrome**
+
+![Chrome](assets/img/google-chrome.jpg)
+
+- **Firefox**
+
+![Firefox](assets/img/firefox.jpg)
+
+- **MS Edge**
+
+![MS Edge](assets/img/ms-edge.jpg)
+
+- **Opera**
+
+![Opera](assets/img/opera.jpg)
