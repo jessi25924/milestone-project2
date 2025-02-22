@@ -35,10 +35,12 @@ Flagtastic Mission is designed to be fully responsive across various screen seiz
 
 | Device                          | Comment                        | Screenshot                                                |
 | ------------------------------- | ------------------------------ | --------------------------------------------------------- |
-| Mobile (Chrome DevTools)        | Achieves desired functionality | ![Mobile Device](assets/img/mobile-respons.jpg)           |
-| Tablet (Chrome DevTools)        | Achieves desired functionality | ![Tablet Device](assets/img/tablet-respons.jpg)           |
-| Laptop 1024px (Chrome DevTools) | Achieves desired functionality | ![Laptop1024px Device](assets/img/laptop1024-respons.jpg) |
+| Iphone 414 x 736                | Achieves desired functionality | ![Mobile Device](assets/img/iphone.jpg)                   |
+| Google Pixel 411 x 731          | Achieves desired functionality | ![Mobile Device](assets/img/google-pixel.jpg)             |
+| Ipad Pro 1366 x 1024            | Achieves desired functionality | ![Tablet Device](assets/img/ipad-pro.jpg)                 |
+| Amazon Kindle Fire 768 x 1024   | Achieves desired functionality | ![Tablet Device](assets/img/amazon-kindle.jpg)            |
 | Laptop 1440px (Chrome DevTools) | Achieves desired functionality | ![Laptop1440px Device](assets/img/laptop1440-respons.jpg) |
+| 22" Desktop 1920 x 1080         | Achieves desired functionality | ![Laptop1024px Device](assets/img/desktop22.jpg)          |
 
 ## Browser Compatability
 
