@@ -28,3 +28,14 @@ Lighthouse was used to evaluate the website's performance, accessibility and bes
 | ------- | ---------------------- | ---------------------------------------------------------------------------- |
 | Desktop | minor warning          | ![](assets/img/lighthouse-desktop.png)                                       |
 | Mobile  | some warnings as shown | ![](assets/img/lighthouse-mobile.png) ![](assets/img/lighthouse-mobile2.png) |
+
+## Responsiveness
+
+Flagtastic Mission is designed to be fully responsive across various screen seizes, ensuring a smooth and engaging experience on desktops, tablets, and mobile devices. The layout adapts dynamically, with buttons and text adjusting for readability and usability.
+
+| Device                          | Comment                        | Screenshot                                                |
+| ------------------------------- | ------------------------------ | --------------------------------------------------------- |
+| Mobile (Chrome DevTools)        | Achieves desired functionality | ![Mobile Device](assets/img/mobile-respons.jpg)           |
+| Tablet (Chrome DevTools)        | Achieves desired functionality | ![Tablet Device](assets/img/tablet-respons.jpg)           |
+| Laptop 1024px (Chrome DevTools) | Achieves desired functionality | ![Laptop1024px Device](assets/img/laptop1024-respons.jpg) |
+| Laptop 1440px (Chrome DevTools) | Achieves desired functionality | ![Laptop1440px Device](assets/img/laptop1440-respons.jpg) |
