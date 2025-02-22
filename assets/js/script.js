@@ -176,14 +176,23 @@ function checkAnswer(selected, correct) {
 
   if (selected === correct) {
     feedback.textContent = "Correct!";
-    feedback.style.color = "green";
-    score += 1; // Increases score
-    currentQuestion++; // next question
-    setTimeout(loadQuestion, 1000);
+    feedback.style.color = "White";
+    gameContainer.classList.add("correct-answer"); // Turn green
+    setTimeout(() => {
+      gameContainer.classList.remove("correct-answer");
+      score += 1; // Increases score
+      currentQuestion++; // next question
+      loadQuestion();
+    }, 1000); // Delay before loading next question
   } else {
-    attemptsLeft--; // reduce attempts
-    feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
-    feedback.style.color = "red";
+    gameContainer.classList.add("wrong-answer"); // turn red
+    setTimeout(() => {
+      feedback.textContent = `Wrong! Chances left: ${attemptsLeft}`;
+      feedback.style.color = "red";
+      gameContainer.classList.remove("wrong-answer");
+    }, 500); // remove color after a short delay
+
+    attemptsLeft--;
 
     if (attemptsLeft <= 0) {
       showModal(`Game over! Your final score is ${score}`, "", false, true);

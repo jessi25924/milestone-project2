@@ -62,6 +62,16 @@ h1, #game-intro, #game-instruc {
     
 }
 
+.correct-answer {
+    background-color: green !important;
+    transition: background-color 0.5s ease;
+}
+
+.wrong-answer {
+    background-color: red !important;
+    transition: background-color 0.5s ease;
+}
+
 #flag-image {
     width: 100%;
     max-width: 320px;
