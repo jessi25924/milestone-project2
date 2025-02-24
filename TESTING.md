@@ -4,15 +4,15 @@
 
 To validate all HTML files, the recommended validator service by Code Institute which is [HTML W3C](https://validator.w3.org/) was used.
 
-| Validator                        | Comment  | Screenshot                                                      |
-| -------------------------------- | -------- | --------------------------------------------------------------- |
-| [W3C](https://validator.w3.org/) | No Error | ![](assets/documentation/html-validator.jpg/html-validator.jpg) |
+| Validator                        | Comment  | Screenshot                                   |
+| -------------------------------- | -------- | -------------------------------------------- |
+| [W3C](https://validator.w3.org/) | No Error | ![](assets/documentation/html-validator.jpg) |
 
 To validate the CSS file, the recommended validator service by Code Institute which is [Jigsaw W3C](https://jigsaw.w3.org/css-validator/) was used.
 
-| Validator                                          | Comment  | Screenshot                                                    |
-| -------------------------------------------------- | -------- | ------------------------------------------------------------- |
-| [Jigsaw W3C](https://jigsaw.w3.org/css-validator/) | No Error | ![](assets/documentation/css-validator.jpg/css-validator.jpg) |
+| Validator                                          | Comment  | Screenshot                                  |
+| -------------------------------------------------- | -------- | ------------------------------------------- |
+| [Jigsaw W3C](https://jigsaw.w3.org/css-validator/) | No Error | ![](assets/documentation/css-validator.jpg) |
 
 To validate the JavaScript file, the recommended validator service by Code Institute which is [JSHint](https://jshint.com/) was used.
 
@@ -52,3 +52,5 @@ Flagtastic Mission has been tested across multiple modern web browsers, includin
 | **Firefox** | ![Firefox](assets/documentation/firefox.jpg)      |
 | **MS Edge** | ![MS Edge](assets/documentation/ms-edge.jpg)      |
 | **Opera**   | ![Opera](assets/documentation/opera.jpg)          |
+
+## Bugs
