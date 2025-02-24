@@ -247,9 +247,13 @@ function showModal(
  * and hiding the game container.
  */
 function resetGame() {
-  landingPage.classList.remove("hidden");
-  gameContainer.classList.add("hidden");
-  clearTimer();
+  try {
+    landingPage.classList.remove("hidden");
+    gameContainer.classList.add("hidden");
+    clearTimer();
+  } catch (error) {
+    console.error("An error occurred while resetting the game");
+  }
 }
 
 // Stops any running timer
