@@ -126,30 +126,32 @@ h1, #game-intro, #game-instruc {
 }
 
 /* Error page */
-.error-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.error-page h1 {
+.error-title {
     font-size: 3rem;
     color: white;
 }
 
-.error-page p {
+.error-message {
     font-size: 1.2rem;
     margin: 10px 0;
+    color: white;
 }
 
-.error-page a {
+.error-footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+a {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
     text-decoration: none;
 }
+
 /* Responsive Design */
 /* Mobile */
 @media (max-width: 480px) {
