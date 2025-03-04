@@ -125,6 +125,31 @@ h1, #game-intro, #game-instruc {
     flex-wrap: wrap;
 }
 
+/* Error page */
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.error-page h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.error-page p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.error-page a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
 /* Responsive Design */
 /* Mobile */
 @media (max-width: 480px) {
