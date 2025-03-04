@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flagtastic Mission">
+    <meta name="keywords" content="flag, flags, quiz, flag quiz, flag game">
     <title>Flagtastic Mission</title>
 
     <!-- Favicon -->
@@ -16,38 +18,42 @@
 </head>
 <body>
     <!-- Landing Page -->
-    <div id="landing-page">
+    <header id="landing-page">
         <h1>Flagtastic Mission!</h1>
         <p id="game-intro">
             Test your knowledge of world flags and challenge yourself in two exciting levels.
         </p>
-        <p id="game-instruc">
-            Click <strong>Start</strong> to begin, choose the correct flag from three options, and complete both levels-just be careful, 
-            you only get two attempts per question and in Level 2, you must answer within 1 minute!
-        </p>
+        <ul id="game-instruc">
+            <li>Click <strong>Start</strong> to begin the game.</li>
+            <li>Choose the correct flag from three options</li>
+            <li>Complete both levels-just be careful - you only get two attempts per question.</li>
+            <li>In Level 2, you must answer within 1 minute!</li>
+        </ul>
         <button id="start-button">Start</button>
-    </div>
+    </header>
 
-    <!-- Question Layout-->
-    <div id="game-container" class="hidden">
-        <h2 id="level-text">Level 1</h2>
-        <img id="flag-image" src="#" alt="Flag"> <!--Credit: stackoverflow question ('src=""'-bad value for attribute- html validator error)-->
-        <div id="answer-container">
+    <!-- Main Game -->
+    <main id="game-container" class="hidden">
+        <section>
+            <h2 id="level-text">Level 1</h2>
+            <img id="flag-image" src="#" alt="Flag"> <!--Credit: stackoverflow question ('src=""'-bad value for attribute- html validator error)-->
+            <div id="answer-container">
             <button class="answer-button"></button>
             <button class="answer-button"></button>
             <button class="answer-button"></button>
         </div>
         <p id="feedback"></p>
-    </div>
+        </section>
+    </main>
 
     <!-- Score Modal-->
-     <div id="score-modal" class="modal hidden">
+     <section id="score-modal" class="modal hidden">
         <div class="modal-content">
             <h2 id="modal-title">Game Status</h2>
             <p id="modal-message"></p>
             <button id="modal-close">Start Again</button>
         </div>
-     </div>
+     </section>
 
     <script src="assets/js/script.js"></script>
 </body>
