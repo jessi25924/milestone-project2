@@ -212,6 +212,8 @@ function showModal(
   isLevelComplete = false,
   isGameOver = false
 ) {
+  clearTimer(); // Stop the timer when the game ends
+
   modalTitle.textContent = title;
   modalMessage.textContent = message;
   scoreModal.classList.remove("hidden");
