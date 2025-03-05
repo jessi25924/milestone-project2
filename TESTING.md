@@ -54,3 +54,8 @@ Flagtastic Mission has been tested across multiple modern web browsers, includin
 | **Opera**   | ![Opera](assets/documentation/opera.jpg)          |
 
 ## Bugs
+
+| Bug                                  | Comment                                                 | Screenshot                                                             |
+| ------------------------------------ | ------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Text Overflow in Mobile screen       | To resolve, customise css                               | ![](assets/documentation/bug1.png), ![](assets/documentation/bug2.png) |
+| Timer not cleared when the game ends | To resolve, clearTimer() called in showModal() function | ![](assets/documentation/bug-timer.png)                                |
